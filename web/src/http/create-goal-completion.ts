@@ -1,5 +1,6 @@
 export async function createGoalCompletion(goalId: string) {
-  await fetch('http://localhost:3333/completions', {
+  const apiUrl = import.meta.env.VITE_PROD_API_URL
+  await fetch(`${apiUrl}/completions`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
