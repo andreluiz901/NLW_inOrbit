@@ -7,10 +7,10 @@ import { Separator } from './ui/separator'
 import { useQuery } from '@tanstack/react-query'
 import { getSummary } from '../http/get-summary'
 import dayjs from 'dayjs'
-import ptBr from 'dayjs/locale/pt-br'
+import '../../node_modules/dayjs/locale/pt-br'
 import { PendingGoals } from './pending-goals'
 
-dayjs.locale(ptBr)
+dayjs.locale('pt-br')
 
 export function Summary() {
   const { data } = useQuery({
@@ -23,8 +23,8 @@ export function Summary() {
     return null
   }
 
-  const firstDayOfWeek = dayjs().startOf('week').format('D MMM')
-  const lastDayOfWeek = dayjs().endOf('week').format('D MMM')
+  const firstDayOfWeek = dayjs().locale('pt-br').startOf('week').format('D MMM')
+  const lastDayOfWeek = dayjs().locale('pt-br').endOf('week').format('D MMM')
 
   const completedPercentage = Math.round((data.completed * 100) / data.total)
   return (

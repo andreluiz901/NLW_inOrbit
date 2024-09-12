@@ -9,9 +9,4 @@ export default defineConfig({
       external: ['dayjs/locale/pt-br'],
     },
   },
-  resolve: {
-    alias: {
-      'dayjs/locale/pt-br': 'dayjs/locale/pt-br.js',
-    },
-  },
 })
